@@ -59,7 +59,7 @@ export default function Home({ recipe }) {
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = await client.get({ endpoint: 'recipe' });
 
   return {
