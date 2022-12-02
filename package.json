@@ -11,6 +11,7 @@
   "dependencies": {
     "@cloudflare/next-on-pages": "^0.1.0",
     "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
     "microcms-js-sdk": "^2.3.2",
     "next": "13.0.1",
     "postcss": "^8.4.19",
