@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { client } from 'libs/client';
+import Link from "next/link";
+import { client } from "libs/client";
 // import Image from 'next/image';
 
 const microCMSLoader = ({ src, width, quality }) => {
@@ -11,10 +11,14 @@ export default function Home({ recipe }) {
     <div className="bg-white py-6 sm:py-8 lg:py-12">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div className="mb-10 md:mb-16">
-          <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">humming kitchen</h2>
+          <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
+            humming kitchen
+          </h2>
 
           <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
-            This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.
+            This is a section of some simple filler text, also known as
+            placeholder text. It shares some characteristics of a real written
+            text but is random or otherwise generated.
           </p>
         </div>
         {/* <!-- text - end --> */}
@@ -40,13 +44,18 @@ export default function Home({ recipe }) {
 
                 <div className="flex flex-col flex-1 p-4 sm:p-6">
                   <h2 className="text-gray-800 text-lg font-semibold mb-2">
-                    <div href="#" className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">
+                    <div
+                      href="#"
+                      className="hover:text-indigo-500 active:text-indigo-600 transition duration-100"
+                    >
                       {recipe.title}
                     </div>
                   </h2>
 
                   <p className="text-gray-500 mb-8">{recipe.subtitle}</p>
-                  <span className="w-32 text-center inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{recipe.category.name}</span>
+                  <span className="w-32 text-center inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    {recipe.category.name}
+                  </span>
                 </div>
               </div>
             </Link>
@@ -59,8 +68,8 @@ export default function Home({ recipe }) {
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getServerSideProps = async () => {
-  const data = await client.get({ endpoint: 'recipe' });
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "recipe" });
 
   return {
     props: {
