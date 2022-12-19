@@ -1,5 +1,5 @@
-const isProd = process.env.NODE_ENV === 'production';
-const prefixPath = !isProd ? '/mypage/org-contents/next-app' : '';
+const isProd = process.env.NODE_ENV === "production";
+// const prefixPath = !isProd ? '/mypage/org-contents/next-app' : '';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // assetPrefix: '/mypage/org-contents/next-app',
@@ -9,7 +9,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     //loader: 'custom',
-    domains: ['images.microcms-assets.io'],
+    domains: ["images.microcms-assets.io"],
   },
 };
 
