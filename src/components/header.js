@@ -6,13 +6,7 @@ export default function Header({ blog }) {
     <div className="bg-white lg:pb-12">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div>
-          <img
-            src="/img/header.png"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
+          <img src={"/img/header.png"} width={180} height={37} />
         </div>
         <header className="flex justify-around items-center py-4 md:py-8  py-auto">
           {/* <!-- logo - start --> */}
@@ -45,12 +39,6 @@ export default function Header({ blog }) {
                 ハミングウォーター
               </div>
             </Link>
-
-            <div>
-              {/* <Link href={`/menu`} className="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">
-                メニュー
-              </Link> */}
-            </div>
           </nav>
         </header>
       </div>
