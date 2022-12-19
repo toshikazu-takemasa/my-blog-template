@@ -6,7 +6,7 @@ export default function Header({ blog }) {
     <div className="bg-white lg:pb-12">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         <div>
-          <Image
+          <img
             src="/img/header.png"
             alt="Next.js Logo"
             width={180}
