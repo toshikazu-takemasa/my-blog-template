@@ -10,6 +10,7 @@ export default function RecipeId({ article }) {
   return (
     <main className="px-6">
       <h1 className="text-2xl mx-auto text-center">{article.title}</h1>
+      <p>{article.recipe.maintext}</p>
       <div className="sm:grid sm:grid-cols-12">
         <div className="sm:col-start-4 col-span-6">
           <div
