@@ -6,31 +6,44 @@ const microCMSLoader = ({ src, width, quality }) => {
   return `${src}?auto=format&fit=max&w=${width}`;
 };
 
-export default function Home({ recipe }) {
+export default function Home({ article }) {
   return (
     <div className="bg-white py-6 sm:py-8 lg:py-12">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-        <div className="mb-10 md:mb-16">
-          <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
-            humming kitchen
-          </h2>
+        {/* ピックアップ */}
+        <article className="py-6">
+          <p>ピックアップ</p>
+          <img className="sm:w-1/2 mx-auto" src={"/img/minoyaki.jpg"} />
+          <div className="flex items-center">
+            <p className="my-2 p-1 bg-green-300 text-white text-sm">コラム</p>
+            <p>おしゃれな美濃焼コップで淹れるコーヒー</p>
+          </div>
+        </article>
+        {/* ピックアップ */}
 
-          <p className="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
-            This is a section of some simple filler text, also known as
-            placeholder text. It shares some characteristics of a real written
-            text but is random or otherwise generated.
-          </p>
-        </div>
-        {/* <!-- text - end --> */}
+        {/* 人気記事 */}
+        <article className="py-6">
+          <p>人気記事</p>
+          <img className="sm:w-1/2 mx-auto" src={"/img/banner_pickup.png"} />
+        </article>
+        {/* 人気記事 */}
+
+        {/* LINE */}
+        <img className="sm:w-1/2 mx-auto my-6" src={"/img/baner_line.png"} />
+        {/* LINE */}
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-8">
           {/* <!-- article - start --> */}
-          {recipe.map((recipe) => (
-            <Link key={recipe.id} href={`/recipe/${recipe.id}`} legacyBehavior>
-              <div className="flex flex-col bg-white border rounded-lg overflow-hidden">
+          {article.map((article) => (
+            <Link
+              key={article.id}
+              href={`/recipe/${article.id}`}
+              legacyBehavior
+            >
+              <div className="flex flex-col">
                 <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative">
                   <img
-                    src={recipe.eyecatch.url}
+                    src={article.eyecatch.url}
                     loader={microCMSLoader}
                     loading="lazy"
                     alt=""
@@ -41,21 +54,11 @@ export default function Home({ recipe }) {
                     className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200"
                   />
                 </div>
-
-                <div className="flex flex-col flex-1 p-4 sm:p-6">
-                  <h2 className="text-gray-800 text-lg font-semibold mb-2">
-                    <div
-                      href="#"
-                      className="hover:text-indigo-500 active:text-indigo-600 transition duration-100"
-                    >
-                      {recipe.title}
-                    </div>
-                  </h2>
-
-                  <p className="text-gray-500 mb-8">{recipe.subtitle}</p>
-                  <span className="w-32 text-center inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    {recipe.category.name}
-                  </span>
+                <div className="flex items-center">
+                  <p className="my-2 p-1 bg-green-300 text-white text-sm">
+                    {article.category.name}
+                  </p>
+                  <p>{article.title}</p>
                 </div>
               </div>
             </Link>
@@ -69,11 +72,11 @@ export default function Home({ recipe }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "recipe" });
+  const data = await client.get({ endpoint: "article" });
 
   return {
     props: {
-      recipe: data.contents,
+      article: data.contents,
     },
   };
 };
