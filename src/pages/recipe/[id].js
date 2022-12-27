@@ -53,7 +53,7 @@ export default function RecipeId({ article }) {
           />
           <img
             className="sm:w-1/2 mx-auto"
-            src={article.recipe.subimage.url}
+            src={article.recipe.subimage.src}
             height={article.recipe.subimage.height}
             width={article.recipe.subimage.width}
             loader={microCMSLoader}
