@@ -9,14 +9,35 @@ const microCMSLoader = ({ src, width, quality }) => {
 export default function RecipeId({ article }) {
   return (
     <main className="px-6">
-      <h1 className="text-2xl mx-auto text-center">{article.title}</h1>
-      <p>{article.recipe.maintext}</p>
+      <img
+        className="sm:w-1/2 mx-auto"
+        src={eyecatch.url}
+        height={eyecatch.height}
+        width={eyecatch.width}
+      />
+      <h1 className="text-2xl mx-auto">{article.title}</h1>
+      <p className="text-sm">{article.recipe.maintext}</p>
+      <h2>食材</h2>
+      <div
+        className="mt-5"
+        dangerouslySetInnerHTML={{
+          __html: `${article.recipe.zairyou}`,
+        }}
+      />
+      <h2>調味料</h2>
+      <div
+        className="mt-5"
+        dangerouslySetInnerHTML={{
+          __html: `${article.recipe.spice}`,
+        }}
+      />
+      <h2>手順</h2>
       <div className="sm:grid sm:grid-cols-12">
         <div className="sm:col-start-4 col-span-6">
           <div
             className="mt-5 mx-auto"
             dangerouslySetInnerHTML={{
-              __html: `${article.content}`,
+              __html: `${article.recipe.procedure}`,
             }}
           />
           <div
@@ -24,6 +45,12 @@ export default function RecipeId({ article }) {
             dangerouslySetInnerHTML={{
               __html: `${article.contenthtml}`,
             }}
+          />
+          <img
+            className="sm:w-1/2 mx-auto"
+            src={article.recipe.subimage.url}
+            height={article.recipe.subimage.height}
+            width={article.recipe.subimage.width}
           />
           <p>投稿日:{article.publishedAt}</p>
         </div>
