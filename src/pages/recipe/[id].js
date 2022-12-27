@@ -11,9 +11,9 @@ export default function RecipeId({ article }) {
     <main className="px-6">
       <img
         className="sm:w-1/2 mx-auto"
-        src={eyecatch.url}
-        height={eyecatch.height}
-        width={eyecatch.width}
+        src={article.eyecatch.url}
+        height={article.eyecatch.height}
+        width={article.eyecatch.width}
       />
       <h1 className="text-2xl mx-auto">{article.title}</h1>
       <p className="text-sm">{article.recipe.maintext}</p>
