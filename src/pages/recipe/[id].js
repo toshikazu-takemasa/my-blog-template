@@ -39,7 +39,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: "blocking" };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
+// データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "article", contentId: id });
