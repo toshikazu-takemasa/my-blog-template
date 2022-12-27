@@ -51,6 +51,7 @@ export default function RecipeId({ article }) {
               __html: `${article.contenthtml}`,
             }}
           />
+
           <img
             className="sm:w-1/2 mx-auto"
             src={article.recipe.subimage.src}
