@@ -14,6 +14,11 @@ export default function RecipeId({ article }) {
         src={article.eyecatch.url}
         height={article.eyecatch.height}
         width={article.eyecatch.width}
+        loader={microCMSLoader}
+        loading="lazy"
+        alt=""
+        layout="fill"
+        objectfit="contain"
       />
       <h1 className="text-2xl mx-auto">{article.title}</h1>
       <p className="text-sm">{article.recipe.maintext}</p>
@@ -51,6 +56,11 @@ export default function RecipeId({ article }) {
             src={article.recipe.subimage.url}
             height={article.recipe.subimage.height}
             width={article.recipe.subimage.width}
+            loader={microCMSLoader}
+            loading="lazy"
+            alt=""
+            layout="fill"
+            objectfit="contain"
           />
           <p>投稿日:{article.publishedAt}</p>
         </div>
