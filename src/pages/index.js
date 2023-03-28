@@ -76,7 +76,7 @@ export default function Home({ article }) {
   );
 }
 
-// データをテンプレートに受け渡す部分の処理を記述します
+// データをテンプレートに受け渡す部分の処理を記述しま
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "article" });
 
