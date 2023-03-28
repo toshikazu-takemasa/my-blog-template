@@ -8,22 +8,28 @@ const microCMSLoader = ({ src, width, quality }) => {
 
 export default function Home({ article }) {
   return (
-    <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="bg-white py-6 sm:py-8">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         {/* ピックアップ */}
         <article className="py-6">
-          <p>ピックアップ</p>
+          <p className="sm:w-1/2 py-3 sm:mx-auto text-xl font-bold">
+            ピックアップ
+          </p>
           <img className="sm:w-1/2 mx-auto" src={"/img/minoyaki.jpg"} />
-          <div className="flex items-center">
-            <p className="my-2 p-1 bg-green-300 text-white text-sm">コラム</p>
-            <p>おしゃれな美濃焼コップで淹れるコーヒー</p>
+          <div className="flex items-center sm:w-1/2 sm:mx-auto">
+            <p className=" my-2 p-1 bg-green-300 text-white text-base">
+              コラム
+            </p>
+            <p className="text-lg font-bold">
+              おしゃれな美濃焼コップで淹れるコーヒー
+            </p>
           </div>
         </article>
         {/* ピックアップ */}
 
         {/* 人気記事 */}
         <article className="py-6">
-          <p>人気記事</p>
+          <p className="sm:w-1/2 sm:mx-auto text-xl font-bold">人気記事</p>
           <img className="sm:w-1/2 mx-auto" src={"/img/banner_pickup.png"} />
         </article>
         {/* 人気記事 */}
@@ -32,7 +38,7 @@ export default function Home({ article }) {
         <img className="sm:w-1/2 mx-auto my-6" src={"/img/baner_line.png"} />
         {/* LINE */}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-8">
+        <div className="mx-auto sm:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6">
           {/* <!-- article - start --> */}
           {article.map((article) => (
             <Link
@@ -41,7 +47,7 @@ export default function Home({ article }) {
               legacyBehavior
             >
               <div className="flex flex-col">
-                <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative">
+                <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
                   <img
                     src={article.eyecatch.url}
                     loader={microCMSLoader}
@@ -55,10 +61,10 @@ export default function Home({ article }) {
                   />
                 </div>
                 <div className="flex items-center">
-                  <p className="my-2 p-1 bg-green-300 text-white text-sm">
+                  <p className="my-2 p-1 bg-green-300 text-white text-base">
                     {article.category.name}
                   </p>
-                  <p>{article.title}</p>
+                  <p className="text-lg font-bold">{article.title}</p>
                 </div>
               </div>
             </Link>
