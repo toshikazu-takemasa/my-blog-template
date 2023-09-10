@@ -28,10 +28,6 @@ export default function Home({ article }) {
         </article>
         {/* 人気記事 */}
 
-        {/* LINE */}
-        <img className="sm:w-1/2 mx-auto my-6" src={"/img/baner_line.png"} />
-        {/* LINE */}
-
         <div className="mx-auto sm:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6">
           {/* <!-- article - start --> */}
           {article.map((article) => (
