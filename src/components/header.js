@@ -19,11 +19,11 @@ export default function Header({ blog }) {
               <div className="border-2 p-2 text-gray-600 hover:bg-green-300 hover:text-white active:text-indigo-700 text-sm">ホーム</div>
             </Link>
 
-            <Link href={`/katuyou`}>
+            <Link href={`/recipe`}>
               <div className="border-2 p-2 text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-sm">レシピ</div>
             </Link>
 
-            <Link href={`/recipe`}>
+            <Link href={`/column`}>
               <div className="border-2 p-2 text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-sm">コラム</div>
             </Link>
           </nav>

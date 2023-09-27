@@ -19,11 +19,6 @@ const Footer = () => {
           <img className="w-2/12 mx-1" src={"/img/icon_column.png"} />
           <div className=" text-white text-sm ">コラム</div>
         </Link>
-
-        <Link className="flex self-center justify-self-start" href={`/colum`}>
-          <img className="w-2/12" src={"/img/icon_hw.png"} />
-          <div className=" text-white text-sm">ハミングウォーター</div>
-        </Link>
       </div>
     </footer>
   );
