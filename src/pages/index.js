@@ -11,20 +11,20 @@ export default function Home({ article }) {
     <div className="bg-white py-6 sm:py-8">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         {/* ピックアップ */}
-        <article className="py-6">
+        {/* <article className="py-6">
           <p className="sm:w-1/2 py-3 sm:mx-auto text-xl font-bold">ピックアップ</p>
           <img className="sm:w-1/2 mx-auto" src={"/img/minoyaki.jpg"} />
           <div className="flex items-center sm:w-1/2 sm:mx-auto">
             <p className=" my-2 p-1 bg-green-300 text-white text-base">コラム</p>
             <p className="text-lg font-bold">おしゃれな美濃焼コップで淹れるコーヒー</p>
           </div>
-        </article>
+        </article> */}
         {/* ピックアップ */}
 
         {/* 人気記事 */}
         <article className="py-6">
           <p className="sm:w-1/2 sm:mx-auto text-xl font-bold">人気記事</p>
-          <img className="sm:w-1/2 mx-auto" src={"/img/banner_pickup.png"} />
+          {/* <img className="sm:w-1/2 mx-auto" src={"/img/banner_pickup.png"} /> */}
         </article>
         {/* 人気記事 */}
 
