@@ -56,7 +56,7 @@ export default function RecipeId({ article }) {
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blogs" });
 
-  const paths = data.contents.map((content) => `/recipe/${content.id}`);
+  const paths = data.contents.map((content) => `/column/${content.id}`);
   return { paths, fallback: "blocking" };
 };
 
