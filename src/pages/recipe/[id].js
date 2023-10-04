@@ -12,7 +12,7 @@ export default function RecipeId({ article }) {
     <main className="p-6 font-sans">
       <img className="sm:w-1/2 mx-auto" src={article.eyecatch.url} height={article.eyecatch.height} width={article.eyecatch.width} loader={microCMSLoader} loading="lazy" alt="" layout="fill" objectfit="contain" />
       <article className="mx-auto sm:w-1/2">
-        <p className="mt-5 font-bold text-lg">〇〇さんのレシピ</p>
+        {/* <p className="mt-5 font-bold text-lg">〇〇さんのレシピ</p> */}
         <h1 className="text-2xl mx-auto font-bold">{article.title}</h1>
         {mainContents.map((content) => (
           <>

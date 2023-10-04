@@ -31,18 +31,35 @@ export default function Home({ article }) {
         <div className="mx-auto sm:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6">
           {/* <!-- article - start --> */}
           {article.map((article) => {
-            if(animal === "abc") {
-            <Link key={article.id} href={`/recipe/${article.id}`} legacyBehavior>
-              <div className="flex flex-col">
-                <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
-                  <img src={article.eyecatch.url} loader={microCMSLoader} loading="lazy" alt="" layout="fill" width={500} height={500} objectfit="contain" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
-                </div>
-                <div className="flex items-center">
-                  <p className="my-2 p-1 bg-green-300 text-white text-base">{article.category.name}</p>
-                  <p className="text-lg font-bold">{article.title}</p>
-                </div>
-              </div>
-            </Link>
+            if (article.category.name == "レシピ") {
+              return (
+                <Link key={article.id} href={`/recipe/${article.id}`} legacyBehavior>
+                  <div className="flex flex-col">
+                    <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
+                      <img src={article.eyecatch.url} loader={microCMSLoader} loading="lazy" alt="" layout="fill" width={500} height={500} objectfit="contain" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
+                    </div>
+                    <div className="flex items-center">
+                      <p className="my-2 p-1 bg-green-300 text-white text-base">{article.category.name}</p>
+                      <p className="text-lg font-bold">{article.title}</p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            } else if (article.category.name == "コラム") {
+              return (
+                <Link key={article.id} href={`/column/${article.id}`} legacyBehavior>
+                  <div className="flex flex-col">
+                    <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
+                      <img src={article.eyecatch.url} loader={microCMSLoader} loading="lazy" alt="" layout="fill" width={500} height={500} objectfit="contain" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
+                    </div>
+                    <div className="flex items-center">
+                      <p className="my-2 p-1 bg-green-300 text-white text-base">{article.category.name}</p>
+                      <p className="text-lg font-bold">{article.title}</p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            }
           })}
           {/* <!-- article - end --> */}
         </div>

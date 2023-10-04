@@ -13,7 +13,7 @@ export default function Home({ article }) {
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         {/* ピックアップ */}
         <article className="py-6">
-          <p className="sm:w-1/2 py-3 sm:mx-auto text-2xl font-bold text-center">コラム記事一覧</p>
+          <p className="sm:w-1/2 py-3 sm:mx-auto text-2xl font-bold text-center">レシピ記事一覧</p>
 
           {/* <div className="flex items-center sm:w-1/2 sm:mx-auto">
             <p className=" my-2 p-1 bg-green-300 text-white text-base">コラム</p>

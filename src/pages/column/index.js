@@ -31,7 +31,7 @@ export default function Home({ article }) {
         <div className="mx-auto sm:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6">
           {/* <!-- article - start --> */}
           {article.map((article) => (
-            <Link key={article.id} href={`/recipe/${article.id}`} legacyBehavior>
+            <Link key={article.id} href={`/column/${article.id}`} legacyBehavior>
               <div className="flex flex-col cursor-pointer">
                 <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
                   <img src={article.eyecatch.url} loader={microCMSLoader} loading="lazy" alt="" layout="fill" width={500} height={500} objectfit="contain" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
