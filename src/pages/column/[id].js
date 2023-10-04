@@ -13,39 +13,7 @@ export default function RecipeId({ article }) {
       <article className="mx-auto sm:w-1/2">
         <p className="mt-5 font-bold text-lg">〇〇さんのレシピ</p>
         <h1 className="text-2xl mx-auto font-bold">{article.title}</h1>
-        <p className="mt-5 text-sm">{article.recipe.maintext}</p>
-        <div className="mt-5 rounded-md text-center" style={{ backgroundColor: "#e7e3e0" }}>
-          <div
-            className="p-4"
-            dangerouslySetInnerHTML={{
-              __html: `${article.recipe.zairyou}`,
-            }}
-          />
-        </div>
-        <h2 className="my-1 font-bold text-lg">食材</h2>
-        <div
-          style={{ backgroundColor: "#e7e3e0" }}
-          className="p-4 rounded-md"
-          dangerouslySetInnerHTML={{
-            __html: `${article.recipe.syokuzai}`,
-          }}
-        />
-        <h2 className="my-1 font-bold text-lg">調味料</h2>
-        <div
-          style={{ backgroundColor: "#e7e3e0" }}
-          className="p-4 rounded-md"
-          dangerouslySetInnerHTML={{
-            __html: `${article.recipe.spice}`,
-          }}
-        />
-        <h2 className="my-1 font-bold text-lg">手順</h2>
-        <div
-          className="p-4 rounded-md"
-          style={{ backgroundColor: "#e7e3e0" }}
-          dangerouslySetInnerHTML={{
-            __html: `${article.recipe.procedure}`,
-          }}
-        />
+        <p className="mt-5 text-sm">{article.maintext}</p>
       </article>
       <img className=" sm:w-1/2 mx-auto mt-3" src={article.recipe.subimage.url} height={article.recipe.subimage.height} width={article.recipe.subimage.width} loader={microCMSLoader} loading="lazy" alt="" layout="fill" objectfit="contain" />
     </main>
@@ -67,7 +35,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      article: data,
+      article: data.content,
     },
     revalidate: 10,
   };

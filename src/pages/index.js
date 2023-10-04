@@ -30,7 +30,8 @@ export default function Home({ article }) {
 
         <div className="mx-auto sm:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6">
           {/* <!-- article - start --> */}
-          {article.map((article) => (
+          {article.map((article) => {
+            if(animal === "abc") {
             <Link key={article.id} href={`/recipe/${article.id}`} legacyBehavior>
               <div className="flex flex-col">
                 <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
@@ -42,7 +43,7 @@ export default function Home({ article }) {
                 </div>
               </div>
             </Link>
-          ))}
+          })}
           {/* <!-- article - end --> */}
         </div>
       </div>
