@@ -38,9 +38,9 @@ export default function Home({ article }) {
                     <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
                       <img src={article.eyecatch.url} loader={microCMSLoader} loading="lazy" alt="" layout="fill" width={500} height={500} objectfit="contain" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
                     </div>
-                    <div className="flex items-center">
-                      <p className="my-2 p-1 bg-green-300 text-white text-base">{article.category.name}</p>
-                      <p className="text-lg font-bold">{article.title}</p>
+                    <div className="flex flex-row sm:flex-col items-center sm:items-start">
+                      <p className="w-2/12 sm:w-4/12 my-2 p-1 bg-green-300 text-white text-sm text-center rounded">{article.category.name}</p>
+                      <p className="ms-3 sm:ms-0 text-lg font-bold">{article.title}</p>
                     </div>
                   </div>
                 </Link>
@@ -52,9 +52,9 @@ export default function Home({ article }) {
                     <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
                       <img src={article.eyecatch.url} loader={microCMSLoader} loading="lazy" alt="" layout="fill" width={500} height={500} objectfit="contain" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
                     </div>
-                    <div className="flex items-center">
-                      <p className="my-2 p-1 bg-green-300 text-white text-base">{article.category.name}</p>
-                      <p className="text-lg font-bold">{article.title}</p>
+                    <div className="flex flex-row sm:flex-col items-center sm:items-start">
+                      <p className="w-2/12 sm:w-4/12 my-2 p-1 bg-green-300 text-white text-sm text-center rounded">{article.category.name}</p>
+                      <p className="ms-3 sm:ms-0 text-lg font-bold">{article.title}</p>
                     </div>
                   </div>
                 </Link>
