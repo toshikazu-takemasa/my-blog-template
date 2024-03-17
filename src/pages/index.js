@@ -1,6 +1,46 @@
 import Link from "next/link";
 import { client } from "libs/client";
 // import Image from 'next/image';
+// import DriverElement from "./drivers";
+import { driver }  from "driver.js";
+import "driver.js/dist/driver.css";
+
+
+const drivers =  driver({ 
+    showProgress: true,  // Because everyone loves progress bars!
+    steps:[
+      {
+        element:"#home",
+        popover: {
+          title: "ホームボタン",
+          description: "TOPに戻ります",
+        },
+      },
+      {
+        element:"#recipe",
+        popover: {
+          title: "レシピボタン",
+          description: "レシピ一覧に飛びます",
+        },
+      },
+      {
+        element:"#column",
+        popover: {
+          title: "コラムボタン",
+          description: "コラム一覧に飛びます",
+        },
+      }
+    ]
+  });
+  
+const driverHandleClick = () => {
+  drivers.drive();
+}
+const Button = () => (
+  <button onClick={driverHandleClick} className="text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <p className="text-white">ツアー開始</p>
+  </button>
+);
 
 const microCMSLoader = ({ src, width, quality }) => {
   return `${src}?auto=format&fit=max&w=${width}`;
@@ -8,25 +48,28 @@ const microCMSLoader = ({ src, width, quality }) => {
 
 export default function Home({ article }) {
   return (
+    
     <div className="bg-white py-6 sm:py-8">
       <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
         {/* ピックアップ */}
-        {/* <article className="py-6">
+        <article className="py-6 text-slate-500">
           <p className="sm:w-1/2 py-3 sm:mx-auto text-xl font-bold">ピックアップ</p>
-          <img className="sm:w-1/2 mx-auto" src={"/img/minoyaki.jpg"} />
+          {/* <img className="sm:w-1/2 mx-auto" src={"/img/minoyaki.jpg"} /> */}
           <div className="flex items-center sm:w-1/2 sm:mx-auto">
-            <p className=" my-2 p-1 bg-green-300 text-white text-base">コラム</p>
+            <p id="columess" className=" my-2 p-1 bg-green-300 text-base">コラム</p>
             <p className="text-lg font-bold">おしゃれな美濃焼コップで淹れるコーヒー</p>
           </div>
-        </article> */}
+          <div className="w-6/12 mx-auto my-l0"><Button /></div>
+        </article>
         {/* ピックアップ */}
-
+       
         {/* 人気記事 */}
         <article className="py-6">
           <p className="sm:w-1/2 sm:mx-auto text-xl font-bold">人気記事</p>
           {/* <img className="sm:w-1/2 mx-auto" src={"/img/banner_pickup.png"} /> */}
         </article>
         {/* 人気記事 */}
+        
 
         <div className="mx-auto sm:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3  gap-4 md:gap-6">
           {/* <!-- article - start --> */}

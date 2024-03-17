@@ -16,15 +16,15 @@ export default function Header({ blog }) {
 
           <nav className="flex gap-x-3 gap-y-12">
             <Link href={`/`}>
-              <div className="border-2 p-2 text-gray-600 hover:bg-green-300 hover:text-white active:text-indigo-700 text-sm">ホーム</div>
+              <div id="home" className="border-2 p-2 text-gray-600 hover:bg-green-300 hover:text-white active:text-indigo-700 text-sm">ホーム</div>
             </Link>
 
             <Link href={`/recipe`}>
-              <div className="border-2 p-2 text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-sm">レシピ</div>
+              <div id="recipe" className="border-2 p-2 text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-sm">レシピ</div>
             </Link>
 
             <Link href={`/column`}>
-              <div className="border-2 p-2 text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-sm">コラム</div>
+              <div id="column" className="border-2 p-2 text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-sm">コラム</div>
             </Link>
           </nav>
         </header>
