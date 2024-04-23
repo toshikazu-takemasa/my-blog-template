@@ -1,5 +1,6 @@
 import Header from "./header";
 import Footer from "./footer";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 
 const Layout = ({ children }) => {
@@ -8,6 +9,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main>{children}</main>
+      <GoogleTagManager gtmId="GTM-PXFLTXQ4" />
       <Footer />
 
     </>
