@@ -76,7 +76,7 @@ export default function Home({ article }) {
           {article.map((article) => {
             if (article.category.name == "レシピ") {
               return (
-                <Link key={article.id} href={`/recipe/${article.id}`} legacyBehavior>
+                <Link key={article.id} href={`/recipe/${article.id}`} legacyBehavior target="_blank" rel="noopener noreferrer">
                   <div className="flex flex-col">
                     <div className="group h-48 md:h-64 block bg-gray-100 overflow-hidden relative rounded-md">
                       <img src={article.eyecatch.url} loader={microCMSLoader} loading="lazy" alt="" layout="fill" width={500} height={500} objectfit="contain" className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
