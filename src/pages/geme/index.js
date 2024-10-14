@@ -4,12 +4,19 @@ import { Gift } from 'lucide-react';
 // ミッションデータを取得する関数（サーバーサイドで実行）
 export async function getServerSideProps() {
   try {
-    const missionConfigResponse = await fetch('https://api.example.com/resources/mission_config');
-    const missionCountersResponse = await fetch('https://api.example.com/users/counters/custom');
+    getMissionStatus()
+  .then(({ missionConfig, missionCounters }) => {
+    // ページ描画処理
+    const missionConfig = missionConfig.json();
+    const missionCounters = missionCounters.json();
 
-    const missionConfig = await missionConfigResponse.json();
-    const missionCounters = await missionCountersResponse.json();
+  })
+  .catch(error => {
+    // エラーハンドリング
+    console.error('Error:', error);
+  });
 
+   
     return {
       props: {
         missionConfig,
